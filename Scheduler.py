@@ -37,11 +37,15 @@ class myMenu():
         \param num_of_commands Number to mod input commands
         \return Return input number from 0-num_of_commands - 1
         """
-        try:
-            cmd = int(input(">> "))
-            cmd = cmd % num_of_commands
-        except Exception as e:
-            print(e)
+        correctInput = True
+        while(correctInput):
+            try:
+                correctInput = False
+                cmd = int(input(">> "))
+                cmd = cmd % num_of_commands
+            except Exception as e:
+                print(e)
+                correctInput = True
         return cmd
 
     def menu(self):
@@ -278,10 +282,11 @@ class Schedule(myMenu):
         """
         dayDict = {"MON":[], "TUE":[], "WED":[], "THU":[], "FRI":[]}
         for subj in combination:
-##            if(subj.name == "ASP2P" and subj.description.find("MILO") != -1):
-##                return
-##            if(subj.name == "ASP2V" and subj.description.find("MISIC") == -1):
-##                return
+            # if(subj.name == "ASP2P" and subj.description.find("MILO") != -1):
+            #     return
+            # if(subj.name == "ASP2V" and subj.description.find("MISIC") == -1):
+            #     return
+
             dayDict[subj.day].append(subj.name + " " + subj.day + " " + str(subj.time[0]) + "-" + str(subj.time[-1] + 1) + " " + subj.description + '\n')
 
 ##        if(len(dayDict["MON"]) != 0):
