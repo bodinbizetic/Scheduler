@@ -1,2 +1,2 @@
 # Sheduler
-Simple app that i used for making my class schedule.
+Simple app that I used for making my class schedule.
